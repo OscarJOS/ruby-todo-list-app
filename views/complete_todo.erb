@@ -1,18 +1,14 @@
-<h2>Edit a to-do item</h2>
+<h2>Mark item as complete</h2>
 
 
   <% if TODOS.empty? %>
     <p>Your to-do list is empty. <a href="/add_todo">Let's add a new item</a></p>
   <% else %>
     <div class="">
-      <form method="post" action="/edit_todo">
+      <form method="post" action="/complete_todo">
         <fieldset>
-          <label for="index">Item number:</label>
+          <label for="index">Completed to-do item:</label>
           <input type="number" name="index" id="index">
-        </fieldset>
-        <fieldset>
-          <label for="todo">Edit to:</label>
-          <input type="text" name="todo" id="todo">
         </fieldset>
         <input type="submit">
       </form>
@@ -27,6 +23,5 @@
       <% end %>
     </div>
   <% end %>
-
 
 <a href="/">Back to to-do list</a>

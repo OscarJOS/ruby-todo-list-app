@@ -21,6 +21,11 @@ def delete_todo(index)
   TODOS.delete_at(item_index)
 end
 
+def complete_todo(index)
+  item_index = index.to_i - 1
+  TODOS[item_index][:completed] = true
+end
+
 
 get "/" do
   erb :index
@@ -50,5 +55,14 @@ end
 
 post "/delete_todo" do
   delete_todo(params[:index])
+  redirect "/"
+end
+
+get "/complete_todo" do
+  erb :complete_todo
+end
+
+post "/complete_todo" do
+  complete_todo(params[:index])
   redirect "/"
 end
