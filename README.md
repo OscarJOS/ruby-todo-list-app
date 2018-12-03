@@ -9,7 +9,7 @@ Task: build a to-do list web app using Sinatra
 - [x] User can delete a todo
 - [x] User can mark a todo as complete
 - [x] User can mark a todo as incomplete
-- [ ] User can filter todos by "All", "Active" and "Complete"
+- [x] User can filter todos by "All", "Active" and "Complete"
 - [ ] It needs to look good
 
 
