@@ -26,6 +26,11 @@ def complete_todo(index)
   TODOS[item_index][:completed] = true
 end
 
+def incomplete_todo(index)
+  item_index = index.to_i - 1
+  TODOS[item_index][:completed] = false
+end
+
 
 get "/" do
   erb :index
@@ -64,5 +69,14 @@ end
 
 post "/complete_todo" do
   complete_todo(params[:index])
+  redirect "/"
+end
+
+get "/incomplete_todo" do
+  erb :incomplete_todo
+end
+
+post "/incomplete_todo" do
+  incomplete_todo(params[:index])
   redirect "/"
 end

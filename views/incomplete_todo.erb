@@ -1,0 +1,27 @@
+<h2>Mark item as incomplete</h2>
+
+
+  <% if TODOS.empty? %>
+    <p>Your to-do list is empty. <a href="/add_todo">Let's add a new item</a></p>
+  <% else %>
+    <div class="">
+      <form method="post" action="/incomplete_todo">
+        <fieldset>
+          <label for="index">Incomplete to-do item:</label>
+          <input type="number" name="index" id="index">
+        </fieldset>
+        <input type="submit">
+      </form>
+    </div>
+    <div class="">
+      <% TODOS.each_with_index do |todoentry, index| %>
+        <% if todoentry[:completed] == true %>
+          <p><del><%= index + 1 %>: <%= todoentry[:todo] %></del></p>
+        <% else %>
+          <p><%= index + 1 %>: <%= todoentry[:todo] %></p>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+<a href="/">Back to to-do list</a>
