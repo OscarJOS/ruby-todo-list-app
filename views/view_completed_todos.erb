@@ -1,0 +1,9 @@
+<% if TODOS.empty? %>
+  <p>Your to-do list is empty. <a href="/add_todo">Let's add a new item</a></p>
+<% else %>
+  <% TODOS.each_with_index do |todoentry, index| %>
+    <% if todoentry[:completed] == true %>
+      <p><%= index + 1 %>: <%= todoentry[:todo] %></p>
+    <% end %>
+  <% end %>
+<% end %>

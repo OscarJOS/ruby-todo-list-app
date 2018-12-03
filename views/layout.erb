@@ -10,6 +10,7 @@
     <section>
       <%= yield %>
     </section>
+
     <section>
       <h3>Manage your list:</h3>
       <p><a href="/add_todo">Add a new item</a></p>
@@ -17,6 +18,13 @@
       <p><a href="/delete_todo">Delete an item</a></p>
       <p><a href="/complete_todo">Mark item as complete</a></p>
       <p><a href="/incomplete_todo">Mark item as incomplete</a></p>
+    </section>
+
+    <section>
+      <h3>View:</h3>
+      <p><a href="/">All items</a></p>
+      <p><a href="/view_completed_todos">Completed items</a></p>
+      <p><a href="/view_incomplete_todos">Incomplete items</a></p>
     </section>
   </body>
 </html>

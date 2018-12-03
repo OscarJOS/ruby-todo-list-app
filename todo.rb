@@ -80,3 +80,7 @@ post "/incomplete_todo" do
   incomplete_todo(params[:index])
   redirect "/"
 end
+
+get "/view_completed_todos" do
+  erb :view_completed_todos
+end
