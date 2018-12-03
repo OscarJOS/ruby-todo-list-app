@@ -17,6 +17,6 @@ Task: build a to-do list web app using Sinatra
 
 - [ ] Store todos in Postgres
 - [ ] User can clear completed todos
-- [ ] User can untoggle completed todo
+- [x] User can untoggle completed todo
 - [ ] Add "complete by date" to todo
 - [ ] User can filter and view "Overdue" todos
