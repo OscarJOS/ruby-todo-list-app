@@ -16,8 +16,8 @@ get "/" do
   erb :index
 end
 
-get "/new" do
-  erb :new
+get "/add_todo" do
+  erb :add_todo
 end
 
 post "/create" do
