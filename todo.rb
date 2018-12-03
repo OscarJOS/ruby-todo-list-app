@@ -84,3 +84,7 @@ end
 get "/view_completed_todos" do
   erb :view_completed_todos
 end
+
+get "/view_incomplete_todos" do
+  erb :view_incomplete_todos
+end
