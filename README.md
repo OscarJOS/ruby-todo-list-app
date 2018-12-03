@@ -6,6 +6,7 @@ Task: build a to-do list web app using Sinatra
 
 - [x] User can add a todo
 - [x] User can edit a todo
+- [ ] User can delete a todo
 - [ ] User can mark a todo as complete
 - [ ] User can filter todos by "All", "Active" and "Complete"
 - [ ] It needs to look good
