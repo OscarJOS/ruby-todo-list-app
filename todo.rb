@@ -19,3 +19,8 @@ end
 get "/new" do
   erb :new
 end
+
+post "/create" do
+  add_new_todo(params[:todo])
+  redirect "/"
+end

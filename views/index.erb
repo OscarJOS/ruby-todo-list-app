@@ -1,5 +1,6 @@
+<h2>All to-dos - completed and incomplete</h2>
 <% TODOS.each do |todoentry| %>
-  <p><%= todoentry %></p>
+  <p><%= todoentry[:todo] %></p>
 <% end %>
 
 <p><a href="/new">Add a new to-do item</a></p>
