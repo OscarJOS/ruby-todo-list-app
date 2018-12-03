@@ -4,6 +4,18 @@ require "uri"
 
 TODOS = []
 
+def add_new_todo(new_todo)
+  TODOS << {
+    todo: new_todo,
+    completed: false
+  }
+end
+
+
 get "/" do
   erb :index
+end
+
+get "/new" do
+  erb :new
 end
