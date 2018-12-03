@@ -14,6 +14,6 @@ class ToDoTest < Test::Unit::TestCase
   def test_it_prints_empty_array
     get '/'
     assert last_response.ok?
-    assert_equal "", last_response.body
+    assert_equal "[]\n", last_response.body
   end
 end

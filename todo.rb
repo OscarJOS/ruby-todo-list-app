@@ -5,5 +5,5 @@ require "uri"
 TODOS = []
 
 get "/" do
-  TODOS
+  erb :index
 end
