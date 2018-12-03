@@ -11,9 +11,9 @@ class ToDoTest < Test::Unit::TestCase
     Sinatra::Application
   end
 
-  def test_it_says_hello_world
+  def test_it_prints_empty_array
     get '/'
     assert last_response.ok?
-    assert_equal "Hello world", last_response.body
+    assert_equal "", last_response.body
   end
 end
