@@ -8,7 +8,7 @@
       <form method="post" action="/complete_todo">
         <fieldset>
           <label for="index">Completed to-do item:</label>
-          <input type="number" name="index" id="index">
+          <input type="number" name="index" id="index" min="1" max="<%= TODOS.length %>" value="1">
         </fieldset>
         <input type="submit">
       </form>
