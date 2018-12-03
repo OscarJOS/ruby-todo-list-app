@@ -1,0 +1,23 @@
+<h2>Delete a to-do item</h2>
+
+
+  <% if TODOS.empty? %>
+    <p>Your to-do list is empty. <a href="/add_todo">Let's add a new item</a></p>
+  <% else %>
+    <div class="">
+      <form method="post" action="/delete_todo">
+        <fieldset>
+          <label for="index">Item number to delete:</label>
+          <input type="number" name="index" id="index">
+        </fieldset>
+        <input type="submit">
+      </form>
+    </div>
+    <div class="">
+      <% TODOS.each_with_index do |todoentry, index| %>
+        <p><%= index + 1 %>: <%= todoentry[:todo] %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+<a href="/">Back to to-do list</a>

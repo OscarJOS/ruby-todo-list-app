@@ -16,7 +16,7 @@ def edit_todo(index, todo)
   TODOS[item_index][:todo] = todo
 end
 
-def delete_todo(index, todo)
+def delete_todo(index)
   item_index = index.to_i - 1
   TODOS.delete_at(item_index)
 end
@@ -45,5 +45,10 @@ post "/edit_todo" do
 end
 
 get "/delete_todo" do
-  erb :edit_todo
+  erb :delete_todo
+end
+
+post "/delete_todo" do
+  delete_todo(params[:index])
+  redirect "/"
 end
