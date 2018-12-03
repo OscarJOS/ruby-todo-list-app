@@ -16,4 +16,11 @@ class ToDoTest < Test::Unit::TestCase
     assert last_response.ok?
     assert_equal "[]\n", last_response.body
   end
+
+  # def test_it_prints_items_in_array
+  #   @todos = ["wash clothes", "cook dinner"]
+  #   get '/'
+  #   assert last_response.ok?
+  #   assert_equal "cook dinner", last_response.body
+  # end
 end
