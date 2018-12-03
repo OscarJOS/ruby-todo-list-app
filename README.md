@@ -4,8 +4,8 @@ Task: build a to-do list web app using Sinatra
 
 ## Core Features
 
-- [ ] User can add a todo
-- [ ] User can edit a todo
+- [x] User can add a todo
+- [x] User can edit a todo
 - [ ] User can mark a todo as complete
 - [ ] User can filter todos by "All", "Active" and "Complete"
 - [ ] It needs to look good
