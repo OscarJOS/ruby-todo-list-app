@@ -1,0 +1,23 @@
+<h2>Edit a to-do item</h2>
+<div class="">
+  <form method="post" action="/edit_todo">
+    <fieldset>
+      <label for="index">Item number:</label>
+      <input type="number" name="index" id="index">
+    </fieldset>
+    <fieldset>
+      <label for="todo">Edit to:</label>
+      <input type="text" name="todo" id="todo">
+    </fieldset>
+    <input type="submit">
+  </form>
+</div>
+
+<div class="">
+  <h2>To-dos</h2>
+  <% TODOS.each_with_index do |todoentry, index| %>
+    <p><%= index + 1 %>: <%= todoentry[:todo] %></p>
+  <% end %>
+</div>
+
+<a href="/">Back to to-do list</a>
