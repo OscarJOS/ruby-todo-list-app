@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700');
+
+html{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body{
+  font-family: 'Raleway', sans-serif;
+  width: 70vw;
+  align-self: center;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #EEC9E4, #C1D2F6);
+}
+
+a{
+  text-decoration: none;
+}
+
+nav li{
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.5rem;
+
+
+}
