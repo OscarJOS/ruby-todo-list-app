@@ -6,7 +6,8 @@
     <div class="">
       <form method="post" action="/delete_todo">
         <fieldset>
-          <label for="index">Item number to delete:</label>
+          <label for="index">Select item number:</label>
+          <br>
           <input type="number" name="index" id="index" min="1" max="<%= TODOS.todos.length %>" value="1">
         </fieldset>
         <input type="submit">
