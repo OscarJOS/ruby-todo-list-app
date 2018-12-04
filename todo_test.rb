@@ -11,12 +11,6 @@ class ToDoTest < Test::Unit::TestCase
     Sinatra::Application
   end
 
-  # def test_it_shows_index_page
-  #   get '/'
-  #   puts last_response.body
-  #   assert last_response.body.include?("Let's add a new item")
-  # end
-
   def test_it_adds_item_to_todo_list
     post '/add_todo', :todo => 'Make tea'
     get '/'
@@ -61,6 +55,4 @@ class ToDoTest < Test::Unit::TestCase
     puts last_response.body
     assert last_response.body.include?('Make tea')
   end
-
-
 end
