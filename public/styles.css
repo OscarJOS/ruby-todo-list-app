@@ -39,6 +39,10 @@ nav a:hover {
   color: #352D33;
 }
 
+ul{
+  padding: 0;
+}
+
 nav li{
   display: inline-block;
   font-size: 0.8rem;
