@@ -7,15 +7,20 @@
 html{
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(to bottom, #EEC9E4, #C1D2F6);
+  background-color: #C1D2F6;
 }
 
 body{
-  height: 100vh;
   width: 65vw;
   font-family: 'Raleway', sans-serif;
   align-self: center;
   text-align: center;
+  font-size: 0.9rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem;
 }
 
 nav a{
@@ -72,6 +77,7 @@ section{
   margin: 0.2rem;
   padding: 0.3rem;
   font-weight: 500;
+  text-transform: capitalize;
 }
 
 .completed{

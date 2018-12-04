@@ -43,6 +43,6 @@ class ToDoTest < Test::Unit::TestCase
   def test_it_marks_item_as_incomplete
     post '/incomplete_todo', :index => "2"
     get '/'
-    assert last_response.body.include?('Make tea')
+    assert last_response.body.include?('<p class="todo incomplete">2: Make tea</p>')
   end
 end
