@@ -2,34 +2,53 @@ require "sinatra"
 require "sinatra/reloader"
 require "uri"
 
-TODOS = []
+class ToDoList
+  attr_accessor :todos
 
-def add_new_todo(new_todo)
-  TODOS << {
-    todo: new_todo,
-    completed: false
-  }
+  def initialize
+    @todos = []
+  end
+
+  def edit_todo(index, todo)
+    item_index = index.to_i - 1
+    TODOS[item_index][:todo] = todo
+  end
+
+  def delete_todo(index)
+    item_index = index.to_i - 1
+    TODOS.delete_at(item_index)
+  end
+
+  def complete_todo(index)
+    item_index = index.to_i - 1
+    TODOS[item_index][:completed] = true
+  end
+
+  def incomplete_todo(index)
+    item_index = index.to_i - 1
+    TODOS[item_index][:completed] = false
+  end
 end
 
-def edit_todo(index, todo)
-  item_index = index.to_i - 1
-  TODOS[item_index][:todo] = todo
+class NewToDo
+  attr_accessor :todo, :completed
+
+  def initialize(todo)
+    @todo = todo
+    @completed = false
+  end
+
+  def add_new_todo
+    {
+      todo: @todo,
+      completed: @completed
+    }
+  end
 end
 
-def delete_todo(index)
-  item_index = index.to_i - 1
-  TODOS.delete_at(item_index)
-end
 
-def complete_todo(index)
-  item_index = index.to_i - 1
-  TODOS[item_index][:completed] = true
-end
 
-def incomplete_todo(index)
-  item_index = index.to_i - 1
-  TODOS[item_index][:completed] = false
-end
+
 
 
 get "/" do
