@@ -48,10 +48,38 @@ hr{
   width: 80%;
 }
 
+section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #FFFFFF;
   border-radius: 2rem;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+}
+
+.todo{
+  border: 1px solid #352D33;
+  margin: 0.2rem;
+  padding: 0.3rem;
+}
+
+.completed{
+  text-decoration: line-through;
+
+}
+
+.incomplete{
+
 }

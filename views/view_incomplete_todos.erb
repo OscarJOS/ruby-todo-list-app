@@ -3,7 +3,7 @@
 <% else %>
   <% TODOS.todos.each_with_index do |todoentry, index| %>
     <% if todoentry[:completed] == false %>
-      <p><%= index + 1 %>: <%= todoentry[:todo] %></p>
+      <p class="incomplete"><%= index + 1 %>: <%= todoentry[:todo] %></p>
     <% end %>
   <% end %>
 <% end %>

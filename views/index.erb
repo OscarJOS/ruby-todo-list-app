@@ -1,11 +1,13 @@
-<% if TODOS.todos.empty? %>
-  <p>Your to-do list is empty. <a href="/add_todo">Let's add a new item</a></p>
-<% else %>
-  <% TODOS.todos.each_with_index do |todoentry, index| %>
-    <% if todoentry[:completed] == true %>
-      <p><del><%= index + 1 %>: <%= todoentry[:todo] %></del></p>
-    <% else %>
-      <p><%= index + 1 %>: <%= todoentry[:todo] %></p>
+<div class="content">
+  <% if TODOS.todos.empty? %>
+    <p>Your to-do list is empty. <a href="/add_todo">Let's add a new item</a></p>
+  <% else %>
+    <% TODOS.todos.each_with_index do |todoentry, index| %>
+      <% if todoentry[:completed] == true %>
+        <p class="todo completed"><%= index + 1 %>: <%= todoentry[:todo] %></p>
+      <% else %>
+        <p class="todo incomplete"><%= index + 1 %>: <%= todoentry[:todo] %></p>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
+</div>
