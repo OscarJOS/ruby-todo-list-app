@@ -12,7 +12,6 @@ class ToDoList
   def add_new_todo(todo)
     newtodo = NewToDo.new(todo)
     @todos << newtodo.new_todo
-
   end
 
   def edit_todo(index, todo)
@@ -55,7 +54,6 @@ end
 
 
 TODOS = ToDoList.new
-
 
 get "/" do
   erb :index

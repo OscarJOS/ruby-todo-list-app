@@ -11,24 +11,27 @@ class ToDoTest < Test::Unit::TestCase
     Sinatra::Application
   end
 
-  # def test_it_prints_empty_array
-  #   get '/'
-  #   assert last_response.ok?
-  #   assert_equal "[]\n", last_response.body
-  # end
-
   # def test_it_shows_index_page
   #   get '/'
   #   puts last_response.body
   #   assert last_response.body.include?("Let's add a new item")
   # end
 
-  def test_it_adds_item_to_todo_list
+  # def test_it_adds_item_to_todo_list
+  #   post '/add_todo', :todo => 'Make tea'
+  #   get '/'
+  #   puts "***********************"
+  #   puts last_response.body
+  #   assert last_response.body.include?('Make tea')
+  # end
+
+  def test_it_edits_item_in_todo_list
     post '/add_todo', :todo => 'Make tea'
+    post '/edit_todo', :index => '1', :todo => 'Get milk'
     get '/'
     puts "***********************"
     puts last_response.body
-    assert last_response.body.include?('Make tea')
+    assert last_response.body.include?('Get milk')
   end
 
 
