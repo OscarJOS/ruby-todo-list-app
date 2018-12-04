@@ -23,6 +23,12 @@ h2 {
   margin: 0.5rem;
 }
 
+a{
+  font-weight: 700;
+  text-decoration: none;
+
+}
+
 nav a{
   text-decoration: none;
   color: #3D3D42;
