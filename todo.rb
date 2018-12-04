@@ -9,26 +9,33 @@ class ToDoList
     @todos = []
   end
 
+  def add_new_todo(todo)
+    newtodo = NewToDo.new(todo)
+    @todos << newtodo.new_todo
+
+  end
+
   def edit_todo(index, todo)
     item_index = index.to_i - 1
-    TODOS[item_index][:todo] = todo
+    @todos[item_index][:todo] = todo
   end
 
   def delete_todo(index)
     item_index = index.to_i - 1
-    TODOS.delete_at(item_index)
+    @todos.delete_at(item_index)
   end
 
   def complete_todo(index)
     item_index = index.to_i - 1
-    TODOS[item_index][:completed] = true
+    @todos[item_index][:completed] = true
   end
 
   def incomplete_todo(index)
     item_index = index.to_i - 1
-    TODOS[item_index][:completed] = false
+    @todos[item_index][:completed] = false
   end
 end
+
 
 class NewToDo
   attr_accessor :todo, :completed
@@ -38,7 +45,7 @@ class NewToDo
     @completed = false
   end
 
-  def add_new_todo
+  def new_todo
     {
       todo: @todo,
       completed: @completed
@@ -47,8 +54,7 @@ class NewToDo
 end
 
 
-
-
+TODOS = ToDoList.new
 
 
 get "/" do
@@ -60,7 +66,7 @@ get "/add_todo" do
 end
 
 post "/add_todo" do
-  add_new_todo(params[:todo])
+  TODOS.add_new_todo(params[:todo])
   redirect "/"
 end
 
@@ -69,7 +75,7 @@ get "/edit_todo" do
 end
 
 post "/edit_todo" do
-  edit_todo(params[:index], params[:todo],)
+  TODOS.edit_todo(params[:index], params[:todo],)
   redirect "/"
 end
 
@@ -78,7 +84,7 @@ get "/delete_todo" do
 end
 
 post "/delete_todo" do
-  delete_todo(params[:index])
+  TODOS.delete_todo(params[:index])
   redirect "/"
 end
 
@@ -87,7 +93,7 @@ get "/complete_todo" do
 end
 
 post "/complete_todo" do
-  complete_todo(params[:index])
+  TODOS.complete_todo(params[:index])
   redirect "/"
 end
 
@@ -96,7 +102,7 @@ get "/incomplete_todo" do
 end
 
 post "/incomplete_todo" do
-  incomplete_todo(params[:index])
+  TODOS.incomplete_todo(params[:index])
   redirect "/"
 end
 
