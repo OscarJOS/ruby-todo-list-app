@@ -11,8 +11,9 @@ html{
 }
 
 body{
-  font-family: 'Raleway', sans-serif;
+  height: 100vh;
   width: 65vw;
+  font-family: 'Raleway', sans-serif;
   align-self: center;
   text-align: center;
 }
@@ -27,10 +28,6 @@ nav a:hover {
   color: #352D33;
 }
 
-nav{
-  list-style: none;
-}
-
 nav li{
   display: inline-block;
   font-size: 0.8rem;
@@ -41,6 +38,7 @@ nav li{
   border-radius: 0.2rem;
   justify-content: center;
   padding: 0.2rem;
+  list-style: none;
 }
 
 hr{
@@ -83,5 +81,4 @@ section{
 
 .incomplete{
   background-color: #FFCACE;
-
 }

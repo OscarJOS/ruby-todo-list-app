@@ -37,7 +37,7 @@ class ToDoTest < Test::Unit::TestCase
     post '/add_todo', :todo => 'Make tea'
     post '/complete_todo', :index => "2"
     get '/'
-    assert last_response.body.include?('<del>2: Make tea</del>')
+    assert last_response.body.include?('<p class="todo completed">2: Make tea</p>')
   end
 
   def test_it_marks_item_as_incomplete
