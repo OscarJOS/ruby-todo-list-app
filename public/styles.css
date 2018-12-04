@@ -5,9 +5,9 @@
 } */
 
 html{
-  height: 100%;
   display: flex;
   flex-direction: column;
+  background-image: linear-gradient(to bottom, #EEC9E4, #C1D2F6);
 }
 
 body{
@@ -15,7 +15,6 @@ body{
   width: 65vw;
   align-self: center;
   text-align: center;
-  background-image: linear-gradient(to bottom, #EEC9E4, #C1D2F6);
 }
 
 nav a{

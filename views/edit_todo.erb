@@ -1,4 +1,4 @@
-<h2>Edit a to-do item</h2>
+<h2>Edit an item</h2>
 
 
   <% if TODOS.todos.empty? %>
@@ -17,12 +17,12 @@
         <input type="submit">
       </form>
     </div>
-    <div class="">
+    <div class="content">
       <% TODOS.todos.each_with_index do |todoentry, index| %>
         <% if todoentry[:completed] == true %>
-          <p><del><%= index + 1 %>: <%= todoentry[:todo] %></del></p>
+          <p class="todo completed"><%= index + 1 %>: <%= todoentry[:todo] %></p>
         <% else %>
-          <p><%= index + 1 %>: <%= todoentry[:todo] %></p>
+          <p class="todo incomplete"><%= index + 1 %>: <%= todoentry[:todo] %></p>
         <% end %>
       <% end %>
     </div>
