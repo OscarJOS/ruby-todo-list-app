@@ -50,6 +50,7 @@ hr{
 
 section{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -73,13 +74,15 @@ section{
   border: 1px solid #352D33;
   margin: 0.2rem;
   padding: 0.3rem;
+  font-weight: 500;
 }
 
 .completed{
   text-decoration: line-through;
-
+  background-color: #C2C3D6;
 }
 
 .incomplete{
+  background-color: #FFCACE;
 
 }
