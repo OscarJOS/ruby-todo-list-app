@@ -107,6 +107,11 @@ input[type=number]:focus, input[type=text]:focus{
   box-shadow: 0 0 0.5rem #B2DBBF;
 }
 
+input::placeholder {
+  color: #A0A0A0;
+  font-style: italic;
+}
+
 .container{
   display: flex;
   flex-direction: column;
