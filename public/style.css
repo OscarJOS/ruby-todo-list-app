@@ -1,21 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700');
-
-/* *{
-  border: 1px solid red
-} */
-
 html{
   display: flex;
   flex-direction: column;
-  background-color: #C1D2F6;
+  background-color: #B2DBBF;
 }
 
 body{
   width: 65vw;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
   align-self: center;
   text-align: center;
   font-size: 0.9rem;
+}
+
+h1 {
+  font-size: 2rem;
 }
 
 h2 {
@@ -26,17 +24,17 @@ h2 {
 a{
   font-weight: 700;
   text-decoration: none;
+  color: #70C1B3;
 
 }
 
 nav a{
   text-decoration: none;
-  color: #3D3D42;
+  color: #FFFFFF;
 }
 
 nav a:hover {
-  background-color: #C1D2F6;
-  color: #352D33;
+  color: #B2DBBF;
 }
 
 ul{
@@ -49,7 +47,8 @@ nav li{
   font-weight: 700;
   text-transform: uppercase;
   margin: 0.3rem;
-  background-color: #EEC9E4;
+  background-color: #247BA0;
+  color: #FFFFFF;
   border-radius: 0.2rem;
   justify-content: center;
   padding: 0.2rem;
@@ -81,7 +80,8 @@ input[type=submit]{
   font-weight: bold;
   text-transform: uppercase;
   border-radius: 0.5rem;
-  background-color: #F48B8B;
+  background-color: #247BA0;
+  color: #FFFFFF;
 }
 
 input[type=number], input[type=text]{
@@ -119,9 +119,9 @@ input[type=number], input[type=text]{
 
 .completed{
   text-decoration: line-through;
-  background-color: #C2C3D6;
+  background-color: #70C1B3;
 }
 
 .incomplete{
-  background-color: #FFCACE;
+  background-color: #FFF2BC;
 }
