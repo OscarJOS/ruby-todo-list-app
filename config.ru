@@ -1,3 +1,3 @@
 # config.ru
-require "./app"
+require_relative "./todo"
 run App

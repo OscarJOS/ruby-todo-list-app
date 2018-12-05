@@ -8,7 +8,7 @@ class ToDoTest < Test::Unit::TestCase
   include Rack::Test::Methods
 
   def app
-    Sinatra::Application
+    App.new
   end
 
   def test_it_adds_item_to_todo_list
