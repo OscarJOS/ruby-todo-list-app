@@ -13,7 +13,9 @@
         <input type="submit">
       </form>
     </div>
+    <hr>
     <div class="content">
+      <h2>To dos:</h2>
       <% TODOS.todos.each_with_index do |todoentry, index| %>
         <% if todoentry[:completed] == true %>
           <p class="todo completed"><%= index + 1 %>: <%= todoentry[:todo] %></p>
