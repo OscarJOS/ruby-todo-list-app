@@ -1,6 +1,6 @@
 ENV["RACK_ENV"] = "test"
 
-require "./todo"
+require "./app"
 require "test/unit"
 require "rack/test"
 
