@@ -125,3 +125,9 @@ input[type=number], input[type=text]{
 .incomplete{
   background-color: #FFF2BC;
 }
+
+.back-to{
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  padding-top: 1rem;
+}
