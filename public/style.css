@@ -53,7 +53,7 @@ nav li{
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
-  margin: 0.3rem;
+  margin: 0.1rem 0.2rem;
   background-color: #247BA0;
   color: #FFFFFF;
   border-radius: 0.2rem;
@@ -81,7 +81,7 @@ fieldset{
 input[type=submit]{
   margin: 0.7rem;
   padding: 5px 0.8rem 5px 0.8rem;
-  width: 30vw;
+  width: 20vw;
   font-family: inherit;
   font-size: inherit;
   font-weight: bold;
@@ -94,11 +94,17 @@ input[type=submit]{
 input[type=number], input[type=text]{
   margin: 0.3rem;
   padding: 5px 0.8rem 5px 0.8rem;
-  width: 30vw;
+  width: 40vw;
   font-family: inherit;
   font-size: inherit;
   font-weight: bold;
   text-align: center;
+  border-radius: 0.5rem;
+}
+
+input[type=number]:focus, input[type=text]:focus{
+  outline: none;
+  box-shadow: 0 0 0.5rem #B2DBBF;
 }
 
 .container{
@@ -116,12 +122,12 @@ input[type=number], input[type=text]{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40vw;
+  width: 43vw;
 }
 
 .todo{
   border: 1px solid #352D33;
-  margin: 0.2rem;
+  margin: 0.2rem 0;
   padding: 0.3rem;
   font-weight: 500;
   text-transform: capitalize;
@@ -147,11 +153,3 @@ input[type=number], input[type=text]{
   border-radius: 0.3rem;
   border: 1px solid #000000;
 }
-
-/* .done-score{
-  background-color: #FFF2BC;
-}
-
-.not-done-score {
-  background-color: #70C1B3;
-} */
