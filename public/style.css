@@ -138,8 +138,19 @@ input[type=number], input[type=text]{
   background-color: #FFF2BC;
 }
 
-.back-to{
+.score{
   font-size: 0.8rem;
   text-transform: uppercase;
-  padding-top: 1rem;
+  font-weight: 700;
+  padding: 0 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid #000000;
 }
+
+/* .done-score{
+  background-color: #FFF2BC;
+}
+
+.not-done-score {
+  background-color: #70C1B3;
+} */

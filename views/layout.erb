@@ -28,6 +28,22 @@
         <%= yield %>
       </section>
 
+      <div>
+        <% done = 0 %>
+        <% not_done = 0 %>
+        <% if TODOS.todos.empty? %>
+          <p></p>
+        <% else %>
+          <% TODOS.todos.each do |todoentry| %>
+            <% if todoentry[:completed] == true %>
+              <% done += 1 %>
+            <% else %>
+              <% not_done += 1 %>
+            <% end %>
+          <% end %>
+          <p><span class="score done-score">done: <%= done %></span> <span class="score not-done-score">not done: <%= not_done %></span></p>
+        <% end %>
+      </div>
 
       <nav>
         <hr>
@@ -38,6 +54,12 @@
           <li><a href="/view_incomplete_todos">Not done</a></li>
         </ul>
       </nav>
+
+
+
+
     </div>
+
+
   </body>
 </html>
