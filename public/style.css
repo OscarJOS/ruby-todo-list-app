@@ -49,7 +49,7 @@ ul{
 
 nav li{
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   margin: 0.3rem;
@@ -128,6 +128,7 @@ input[type=number], input[type=text]{
 }
 
 .completed{
+  font-style: italic;
   text-decoration: line-through;
   background-color: #70C1B3;
   color: #3D3D3D;
