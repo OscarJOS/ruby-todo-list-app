@@ -63,4 +63,13 @@ class App < Sinatra::Base
   get "/view_incomplete_todos" do
     erb :view_incomplete_todos
   end
+
+  get "/clear_completed_todos" do
+    erb :clear_completed_todos
+  end
+
+  post "/clear_completed_todos" do
+    TODOS.clear_completed_todos
+    redirect "/"
+  end
 end

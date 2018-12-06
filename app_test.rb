@@ -45,4 +45,15 @@ class ToDoTest < Test::Unit::TestCase
     get "/"
     assert last_response.body.include?('<p class="todo incomplete">2: Make tea</p>')
   end
+
+  def test_it_clears_completed_todos
+    post "/add_todo", :todo => "Go shopping"
+    post "/complete_todo", :index => "1"
+    post "/complete_todo", :index => "2"
+    post "/clear_completed_todos"
+    get "/"
+    puts last_response.body
+    assert last_response.body.include?('Your to-do list is empty')
+  end
+
 end
