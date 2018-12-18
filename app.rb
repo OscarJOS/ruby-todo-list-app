@@ -2,9 +2,20 @@ require "sinatra"
 require "sinatra/reloader"
 require_relative "newtodo"
 require_relative "todolist"
+require 'sinatra/custom_logger'
+require 'logger'
+
 
 
 class App < Sinatra::Base
+  use Rack::MethodOverride
+  helpers Sinatra::CustomLogger
+
+  configure do
+    logger = Logger.new(STDOUT)
+    set :logger, logger
+  end
+
   TODOS = ToDoList.new
 
   get "/" do
@@ -33,8 +44,8 @@ class App < Sinatra::Base
     erb :delete_todo
   end
 
-  post "/delete_todo" do
-    TODOS.delete_todo(params[:index])
+  delete "/todos/:id" do
+    TODOS.delete_todo(params[:id])
     redirect "/"
   end
 

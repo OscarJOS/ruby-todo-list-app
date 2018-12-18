@@ -26,9 +26,7 @@ class ToDoTest < Test::Unit::TestCase
 
   def test_it_deletes_item_in_todo_list
     post "/add_todo", :todo => "Buy Sugar"
-    post "/delete_todo", :index => "3"
-    post "/delete_todo", :index => "2"
-    post "/delete_todo", :index => "1"
+    delete "/todos/1"
     get "/"
     assert last_response.body.include?("Your to-do list is empty")
   end
@@ -52,7 +50,6 @@ class ToDoTest < Test::Unit::TestCase
     post "/complete_todo", :index => "2"
     post "/clear_completed_todos"
     get "/"
-    puts last_response.body
     assert last_response.body.include?('Your to-do list is empty')
   end
 

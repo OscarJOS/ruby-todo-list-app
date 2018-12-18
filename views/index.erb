@@ -3,11 +3,13 @@
     <p>Your to-do list is empty. <a href="/add_todo">Let's add a new item</a></p>
   <% else %>
     <% TODOS.todos.each_with_index do |todoentry, index| %>
-      <% if todoentry[:completed] == true %>
-        <p class="todo completed"><%= index + 1 %>: <%= todoentry[:todo] %></p>
-      <% else %>
-        <p class="todo incomplete"><%= index + 1 %>: <%= todoentry[:todo] %></p>
-      <% end %>
+      <p class="todo">
+        <%= todoentry[:todo] %>
+        <form method="post" action="/todos/<%= index %>">
+          <input type="hidden" name="_method" value="delete" />
+          <input type="submit" value="Delete">
+        </form>
+      </p>
     <% end %>
   <% end %>
 </div>
