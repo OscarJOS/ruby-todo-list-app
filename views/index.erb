@@ -18,10 +18,14 @@
       </fieldset>
       <input type="submit" value="Add">
     </form>
+    <div class="todo">
     <% TODOS.todos.each_with_index do |todoentry, index| %>
-      <div class="todo">
-        <%= todoentry[:todo] %>
-        <form method="post" action="/todos/<%= index %>">
+        <% if todoentry[:completed] == true %>
+          <p class="todo completed"><%= todoentry[:todo] %></p>
+        <% else %>
+          <p class="todo incomplete"><%= todoentry[:todo] %></p>
+        <% end %>
+        <form method="post" action="/todos/<%= index %>/edit">
           <input type="hidden" name="_method" value="put" />
           <fieldset>
             <label for="todo">Edit to:</label>
@@ -33,6 +37,10 @@
         <form method="post" action="/todos/<%= index %>">
           <input type="hidden" name="_method" value="delete" />
           <input type="submit" value="Delete">
+        </form>
+        <form method="post" action="/todos/<%= index %>/complete">
+          <input type="hidden" name="_method" value="put" />
+          <input type="submit" value="Done">
         </form>
       </div>
     <% end %>

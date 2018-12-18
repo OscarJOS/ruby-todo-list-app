@@ -35,7 +35,7 @@ class App < Sinatra::Base
     erb :edit_todo
   end
 
-  put "/todos/:id" do
+  put "/todos/:id/edit" do
     TODOS.edit_todo(params[:id], params[:edit_todo],)
     redirect "/"
   end
@@ -53,8 +53,8 @@ class App < Sinatra::Base
     erb :complete_todo
   end
 
-  post "/complete_todo" do
-    TODOS.complete_todo(params[:index])
+  put "/todos/:id/complete" do
+    TODOS.complete_todo(params[:id])
     redirect "/"
   end
 
