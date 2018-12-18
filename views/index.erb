@@ -3,13 +3,22 @@
     <p>Your to-do list is empty. <a href="/add_todo">Let's add a new item</a></p>
   <% else %>
     <% TODOS.todos.each_with_index do |todoentry, index| %>
-      <p class="todo">
+      <div class="todo">
         <%= todoentry[:todo] %>
+        <form method="post" action="/todos/<%= index %>">
+          <input type="hidden" name="_method" value="put" />
+          <fieldset>
+            <label for="todo">Edit to:</label>
+            <br>
+            <input type="text" name="todo" id="todo" placeholder="e.g. call brother" autofocus required>
+          </fieldset>
+          <input type="submit" value="Edit">
+        </form>
         <form method="post" action="/todos/<%= index %>">
           <input type="hidden" name="_method" value="delete" />
           <input type="submit" value="Delete">
         </form>
-      </p>
+      </div>
     <% end %>
   <% end %>
 </div>
