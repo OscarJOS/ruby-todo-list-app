@@ -18,8 +18,7 @@ class ToDoList
   end
 
   def delete_todo(index)
-    item_index = index.to_i
-    @todos.delete_at(item_index)
+    @todos.delete_at(index.to_i)
   end
 
   def complete_todo(index)
