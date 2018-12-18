@@ -26,7 +26,7 @@ class App < Sinatra::Base
     erb :add_todo
   end
 
-  post "/add_todo" do
+  post "/todos/" do
     TODOS.add_new_todo(params[:todo])
     redirect "/"
   end
@@ -36,7 +36,7 @@ class App < Sinatra::Base
   end
 
   put "/todos/:id" do
-    TODOS.edit_todo(params[:id], params[:todo],)
+    TODOS.edit_todo(params[:id], params[:edit_todo],)
     redirect "/"
   end
 
