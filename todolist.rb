@@ -21,13 +21,11 @@ class ToDoList
   end
 
   def complete_todo(index)
-    item_index = index.to_i - 1
-    @todos[item_index][:completed] = true
+    @todos[index.to_i][:completed] = true
   end
 
   def incomplete_todo(index)
-    item_index = index.to_i - 1
-    @todos[item_index][:completed] = false
+    @todos[index.to_i][:completed] = false
   end
 
   def clear_completed_todos

@@ -62,8 +62,8 @@ class App < Sinatra::Base
     erb :incomplete_todo
   end
 
-  post "/incomplete_todo" do
-    TODOS.incomplete_todo(params[:index])
+  patch "/todos/:id/incomplete" do
+    TODOS.incomplete_todo(params[:id])
     redirect "/"
   end
 
