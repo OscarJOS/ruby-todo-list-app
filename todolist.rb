@@ -13,8 +13,7 @@ class ToDoList
   end
 
   def edit_todo(index, todo)
-    item_index = index.to_i - 1
-    @todos[item_index][:todo] = todo
+    @todos[index.to_i][:todo] = todo
   end
 
   def delete_todo(index)
