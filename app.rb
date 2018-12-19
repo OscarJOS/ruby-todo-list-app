@@ -22,17 +22,9 @@ class App < Sinatra::Base
     erb :index
   end
 
-  get "/add_todo" do
-    erb :add_todo
-  end
-
   post "/todos/" do
     TODOS.add_new_todo(params[:todo])
     redirect "/"
-  end
-
-  get "/edit_todo" do
-    erb :edit_todo
   end
 
   put "/todos/:id/edit" do
@@ -40,17 +32,10 @@ class App < Sinatra::Base
     redirect "/"
   end
 
-  get "/delete_todo" do
-    erb :delete_todo
-  end
-
   delete "/todos/:id" do
+    logger.info params
     TODOS.delete_todo(params[:id])
     redirect "/"
-  end
-
-  get "/complete_todo" do
-    erb :complete_todo
   end
 
   put "/todos/:id/complete" do
@@ -58,11 +43,7 @@ class App < Sinatra::Base
     redirect "/"
   end
 
-  get "/incomplete_todo" do
-    erb :incomplete_todo
-  end
-
-  patch "/todos/:id/incomplete" do
+  put "/todos/:id/incomplete" do
     TODOS.incomplete_todo(params[:id])
     redirect "/"
   end
