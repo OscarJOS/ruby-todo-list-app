@@ -12,20 +12,19 @@ class ToDoTest < Test::Unit::TestCase
   end
 
   def test_it_adds_item_to_todo_list
-    post "/add_todo", :todo => "Make tea"
-    get "/"
+    post "/todos", :todo => "Make tea"
     assert last_response.body.include?("Make tea")
   end
 
   def test_it_edits_item_in_todo_list
-    post "/add_todo", :todo => "Make tea"
-    post "/edit_todo", :index => "1", :todo => "Get milk"
+    post "/todos", :todo => "Make tea"
+    post "/todos/:id/edit", :id => "1", :edit_todo => "Get milk"
     get "/"
     assert last_response.body.include?("Get milk")
   end
 
   def test_it_deletes_item_in_todo_list
-    post "/add_todo", :todo => "Buy Sugar"
+    post "/todos", :todo => "Buy Sugar"
     delete "/todos/1"
     get "/"
     assert last_response.body.include?("Your to-do list is empty")
