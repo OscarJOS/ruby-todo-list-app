@@ -20,20 +20,31 @@ class App < Sinatra::Base
 
   get "/" do
     @todos = TODOS.todos
-    erb :index
+    @id = params[:id]
+    erb :index, :layout => :layout
   end
 
   post "/todos/" do
+    logger.info params
     TODOS.add_new_todo(params[:todo])
     redirect "/"
   end
 
+  get "/todos/:id/edit" do
+    logger.info params
+    @thistodo = params[:todo]
+    erb :edit
+    # TODOS.edit_todo(params[:id], params[:edit_todo],)
+    # redirect "/"
+  end
+
   put "/todos/:id/edit" do
-    TODOS.edit_todo(params[:id], params[:edit_todo],)
+    TODOS.edit_todo(params[:id], params[:todo],)
     redirect "/"
   end
 
   delete "/todos/:id" do
+    logger.info params
     TODOS.delete_todo(params[:id])
     redirect "/"
   end
