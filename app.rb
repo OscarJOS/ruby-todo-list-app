@@ -39,14 +39,13 @@ class App < Sinatra::Base
     p @id
     p @idnum
     erb :edit
-    # TODOS.edit_todo(params[:id], params[:edit_todo],)
   end
 
   put "/todos/:id/edit" do
     logger.info params
     @id = params[:id]
     @idnum = @id.to_i
-    TODOS.edit_todo(params[@idnum], params[:todo],)
+    TODOS.edit_todo(@id, params[:todo],)
     redirect "/"
   end
 
