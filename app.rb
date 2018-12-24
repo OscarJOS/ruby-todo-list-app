@@ -61,10 +61,12 @@ class App < Sinatra::Base
   end
 
   get "/view_completed_todos" do
+    @todos = TODOS.todos
     erb :view_completed_todos
   end
 
   get "/view_incomplete_todos" do
+    @todos = TODOS.todos
     erb :view_incomplete_todos
   end
 
