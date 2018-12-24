@@ -19,6 +19,7 @@ class App < Sinatra::Base
   TODOS = ToDoList.new
 
   get "/" do
+    @todos = TODOS.todos
     erb :index
   end
 
@@ -33,7 +34,6 @@ class App < Sinatra::Base
   end
 
   delete "/todos/:id" do
-    logger.info params
     TODOS.delete_todo(params[:id])
     redirect "/"
   end
@@ -60,7 +60,7 @@ class App < Sinatra::Base
     erb :clear_completed_todos
   end
 
-  post "/clear_completed_todos" do
+  delete "/todos/delete_all" do
     TODOS.clear_completed_todos
     redirect "/"
   end

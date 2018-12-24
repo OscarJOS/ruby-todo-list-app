@@ -1,5 +1,5 @@
 <div class="content">
-  <% if TODOS.todos.empty? %>
+  <% if @todos.empty? %>
     <p>Your to-do list is empty.</p>
     <form method="post" action="/todos/">
       <fieldset>
@@ -19,7 +19,7 @@
       <input type="submit" value="Add">
     </form>
 
-    <% TODOS.todos.each_with_index do |todoentry, index| %>
+    <% @todos.each_with_index do |todoentry, index| %>
       <div class="todo">
         <% if todoentry[:completed] == true %>
           <p class="todo completed"><%= todoentry[:todo] %></p>
