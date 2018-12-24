@@ -1,13 +1,47 @@
 <div class="content">
-  <% if TODOS.todos.empty? %>
-    <p>Your to-do list is empty. <a href="/add_todo">Let's add a new item</a></p>
+  <% if @todos.empty? %>
+    <p>Your to-do list is empty.</p>
+    <form method="post" action="/todos/">
+      <fieldset>
+        <label for="todo">Add item:</label>
+        <br>
+        <input type="text" name="todo" id="todo" placeholder="e.g. call brother" autofocus required>
+      </fieldset>
+      <input type="submit" value="Add">
+    </form>
   <% else %>
-    <% TODOS.todos.each_with_index do |todoentry, index| %>
-      <% if todoentry[:completed] == true %>
-        <p class="todo completed"><%= index + 1 %>: <%= todoentry[:todo] %></p>
-      <% else %>
-        <p class="todo incomplete"><%= index + 1 %>: <%= todoentry[:todo] %></p>
-      <% end %>
+    <form method="post" action="/todos/">
+      <fieldset>
+        <label for="todo">Add item:</label>
+        <br>
+        <input type="text" name="todo" id="todo" placeholder="e.g. call brother" autofocus required>
+      </fieldset>
+      <input type="submit" value="Add">
+    </form>
+
+    <% @todos.each_with_index do |todoentry, index| %>
+      <div class="todo">
+        <% if todoentry[:completed] == true %>
+          <p class="todo completed"><%= todoentry[:todo] %></p>
+        <% else %>
+          <p class="todo incomplete"><%= todoentry[:todo] %></p>
+        <% end %>
+        <a href="/todos/<%= index %>/edit">Edit me</a>
+
+
+        <form method="post" action="/todos/<%= index %>">
+          <input type="hidden" name="_method" value="delete" />
+          <input type="submit" value="Delete">
+        </form>
+        <form method="post" action="/todos/<%= index %>/complete">
+          <input type="hidden" name="_method" value="put" />
+          <input type="submit" value="Done">
+        </form>
+        <form method="post" action="/todos/<%= index %>/incomplete">
+          <input type="hidden" name="_method" value="put" />
+          <input type="submit" value="Not done">
+        </form>
+      </div>
     <% end %>
   <% end %>
 </div>

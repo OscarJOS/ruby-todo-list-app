@@ -8,52 +8,48 @@ class ToDoTest < Test::Unit::TestCase
   include Rack::Test::Methods
 
   def app
-    App.new
+    App.new!
   end
 
   def test_it_adds_item_to_todo_list
-    post "/add_todo", :todo => "Make tea"
+    post "/todos/", :todo => "Make tea"
     get "/"
     assert last_response.body.include?("Make tea")
   end
 
   def test_it_edits_item_in_todo_list
-    post "/add_todo", :todo => "Make tea"
-    post "/edit_todo", :index => "1", :todo => "Get milk"
+    put "/todos/0/edit", :todo => "Get milk"
     get "/"
     assert last_response.body.include?("Get milk")
   end
 
   def test_it_deletes_item_in_todo_list
-    post "/add_todo", :todo => "Buy Sugar"
-    post "/delete_todo", :index => "3"
-    post "/delete_todo", :index => "2"
-    post "/delete_todo", :index => "1"
+    post "/todos/", :todo => "Go shopping"
+    delete "/todos/1"
     get "/"
-    assert last_response.body.include?("Your to-do list is empty")
+    assert !last_response.body.include?("Go shopping")
   end
 
   def test_it_marks_item_as_completed
-    post "/add_todo", :todo => "Make tea"
-    post "/complete_todo", :index => "2"
+    put "/todos/0/complete"
     get "/"
-    assert last_response.body.include?('<p class="todo completed">2: Make tea</p>')
+    puts last_response.body
+    assert last_response.body.include?('<p class="todo completed">Get milk')
   end
 
   def test_it_marks_item_as_incomplete
-    post "/incomplete_todo", :index => "2"
+    put "/todos/0/incomplete"
     get "/"
-    assert last_response.body.include?('<p class="todo incomplete">2: Make tea</p>')
+    assert last_response.body.include?('<p class="todo incomplete">Get milk')
   end
 
-  def test_it_clears_completed_todos
-    post "/add_todo", :todo => "Go shopping"
-    post "/complete_todo", :index => "1"
-    post "/complete_todo", :index => "2"
-    post "/clear_completed_todos"
-    get "/"
-    puts last_response.body
-    assert last_response.body.include?('Your to-do list is empty')
-  end
+  # def test_it_clears_completed_todos
+  #   post "/add_todo", :todo => "Go shopping"
+  #   post "/complete_todo", :index => "1"
+  #   post "/complete_todo", :index => "2"
+  #   post "/clear_completed_todos"
+  #   get "/"
+  #   assert last_response.body.include?('Your to-do list is empty')
+  # end
 
 end

@@ -5,31 +5,29 @@ class ToDoList
 
   def initialize
     @todos = []
+    @counter = 0
   end
 
   def add_new_todo(todo)
-    newtodo = NewToDo.new(todo)
+    newtodo = NewToDo.new(todo, @counter)
+    @counter += 1
     @todos << newtodo.new_todo
   end
 
   def edit_todo(index, todo)
-    item_index = index.to_i - 1
-    @todos[item_index][:todo] = todo
+    @todos[index.to_i][:todo] = todo
   end
 
   def delete_todo(index)
-    item_index = index.to_i - 1
-    @todos.delete_at(item_index)
+    @todos.delete_at(index.to_i)
   end
 
   def complete_todo(index)
-    item_index = index.to_i - 1
-    @todos[item_index][:completed] = true
+    @todos[index.to_i][:completed] = true
   end
 
   def incomplete_todo(index)
-    item_index = index.to_i - 1
-    @todos[item_index][:completed] = false
+    @todos[index.to_i][:completed] = false
   end
 
   def clear_completed_todos
