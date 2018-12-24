@@ -26,13 +26,11 @@ class App < Sinatra::Base
   end
 
   post "/todos/" do
-    logger.info params
     TODOS.add_new_todo(params[:todo])
     redirect "/"
   end
 
   get "/todos/:id/edit" do
-    logger.info params
     @todos = TODOS.todos
     @id = params[:id]
     @idnum = @id.to_i
