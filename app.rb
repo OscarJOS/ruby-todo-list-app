@@ -4,6 +4,7 @@ require_relative "newtodo"
 require_relative "todolist"
 require 'sinatra/custom_logger'
 require 'logger'
+require 'uri'
 
 
 
@@ -32,14 +33,20 @@ class App < Sinatra::Base
 
   get "/todos/:id/edit" do
     logger.info params
-    @thistodo = params[:todo]
+    @todos = TODOS.todos
+    @id = params[:id]
+    @idnum = @id.to_i
+    p @id
+    p @idnum
     erb :edit
     # TODOS.edit_todo(params[:id], params[:edit_todo],)
-    # redirect "/"
   end
 
   put "/todos/:id/edit" do
-    TODOS.edit_todo(params[:id], params[:todo],)
+    logger.info params
+    @id = params[:id]
+    @idnum = @id.to_i
+    TODOS.edit_todo(params[@idnum], params[:todo],)
     redirect "/"
   end
 

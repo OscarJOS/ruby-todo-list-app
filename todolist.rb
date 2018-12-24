@@ -5,10 +5,12 @@ class ToDoList
 
   def initialize
     @todos = []
+    @counter = 0
   end
 
   def add_new_todo(todo)
-    newtodo = NewToDo.new(todo)
+    newtodo = NewToDo.new(todo, @counter)
+    @counter += 1
     @todos << newtodo.new_todo
   end
 
