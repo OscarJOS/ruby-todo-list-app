@@ -66,14 +66,30 @@ RSpec.describe ToDoList do
     todo_list.complete_todo(2)
     expect(todo_list.filter_todos("true")).to eq([
       {
-        :todo=>"Buy milk",
-        :completed=>true,
-        :id=>0
+        todo: "Buy milk",
+        completed: true,
+        id: 0,
       },
       {
-        :todo=>"Wash car",
-        :completed=>true,
-        :id=>2
+        todo: "Wash car",
+        completed: true,
+        id: 2,
+      }])
+  end
+
+  it "returns the incomplete todos only" do
+    todo_list.complete_todo(0)
+    todo_list.complete_todo(2)
+    expect(todo_list.filter_todos("false")).to eq([
+      {
+        todo: "Pick up kids",
+        completed: false,
+        id: 1,
+      },
+      {
+        todo: "Call sister",
+        completed: false,
+        id: 3,
       }])
   end
 
