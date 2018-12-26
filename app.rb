@@ -21,6 +21,7 @@ class App < Sinatra::Base
     @todos = TODOS.todos
     @id = params[:id]
     @status = TODOS.filter_todos(params[:status])
+    @counter = TODOS.count_incomplete_todos
 
     erb :index
   end

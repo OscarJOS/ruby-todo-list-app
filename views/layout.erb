@@ -38,23 +38,12 @@
             </li>
 
             <li>
-              <% not_done = 0 %>
-                <% if TODOS.todos.empty? %>
-                  <p></p>
-                <% else %>
-                  <% TODOS.todos.each do |todoentry| %>
-                    <% if todoentry[:completed] == false %>
-                      <% not_done += 1 %><% end %>
-                    <% end %>
-                    <p class="score">
-                      📃 Items to complete:
-                        <%= not_done %>
-                      </p>
-                  <% end %>
-
-                </li>
-                <hr>
-                <% end %>
+                <p class="score">
+                  📃 Items to complete: <%= @counter %>
+                </p>
+              </li>
+              <hr>
+            <% end %>
               </ul>
 
             </nav>

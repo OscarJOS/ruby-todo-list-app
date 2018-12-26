@@ -67,4 +67,10 @@ class ToDoTest < Test::Unit::TestCase
     assert !last_response.body.include?("Go shopping")
   end
 
+  def test_it_displays_number_of_incomplete_todos
+    get "/"
+    puts last_response.body
+    assert last_response.body.include?("Items to complete: 1")
+  end
+
 end
