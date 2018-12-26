@@ -29,15 +29,17 @@
             <input class="amend-todo" type="submit" value="📝 Edit">
           </form>
 
-          <form method="post" action="/todos/<%= index %>/complete">
-            <input type="hidden" name="_method" value="put"/>
-            <input class="amend-todo" type="submit" value="✅ Done">
-          </form>
-
-          <form method="post" action="/todos/<%= index %>/incomplete">
-            <input type="hidden" name="_method" value="put"/>
-            <input class="amend-todo" type="submit" value="❌ Not done">
-          </form>
+          <% if todoentry[:completed] == false %>
+            <form method="post" action="/todos/<%= index %>/complete">
+              <input type="hidden" name="_method" value="put"/>
+              <input class="amend-todo" type="submit" value="✅ Done">
+            </form>
+          <% else %>
+            <form method="post" action="/todos/<%= index %>/incomplete">
+              <input type="hidden" name="_method" value="put"/>
+              <input class="amend-todo" type="submit" value="❌ Not done">
+            </form>
+          <% end %>
 
           <form method="post" action="/todos/<%= index %>">
             <input type="hidden" name="_method" value="delete"/>
