@@ -9,14 +9,16 @@
     <div class="container">
       <header>
         <a href="/"><h1>To Do List</h1></a>
+        <hr>
         <nav>
-          <hr>
+
           <ul>
-            <li>View: </li>
+
             <form method="get" action="/">
-              <li><input type="submit" value="all" name="status" value="all"></li>
-              <li><input type="submit" value="incomplete" name="status" value="false"></li>
-              <li><input type="submit" value="complete" name="status" value="true"></li>
+              <li>View: </li>
+              <li><input class="filter-todos" type="submit" value="all" name="status" value="all"></li>
+              <li><input class="filter-todos" type="submit" value="incomplete" name="status" value="false"></li>
+              <li><input class="filter-todos" type="submit" value="complete" name="status" value="true"></li>
             </form>
           </ul>
         </nav>
@@ -25,8 +27,6 @@
             <form method="post" action="/todos/delete_done">
               <input type="submit" value="Clear done items">
             </form>
-
-
           </ul>
         </nav>
         <hr>
