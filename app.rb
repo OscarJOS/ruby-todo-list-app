@@ -4,8 +4,6 @@ require_relative "./lib/newtodo"
 require_relative "./lib/todolist"
 require 'sinatra/custom_logger'
 require 'logger'
-# require 'uri'
-
 
 class App < Sinatra::Base
   use Rack::MethodOverride
