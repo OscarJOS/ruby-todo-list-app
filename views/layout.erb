@@ -22,12 +22,37 @@
             </form>
           </ul>
         </nav>
+        <hr>
         <nav>
           <ul>
-            <form method="post" action="/todos/delete_done">
-              <input class="filter-todos" type="submit" value="🗑️ Clear done items">
-            </form>
+            <li>
+              <form method="post" action="/todos/delete_done">
+                <input class="filter-todos" type="submit" value="🗑️ Clear done items">
+              </form>
+            </li>
+
+            <li>
+                <% not_done = 0 %>
+                <% if TODOS.todos.empty? %>
+                  <p></p>
+                <% else %>
+                  <% TODOS.todos.each do |todoentry| %>
+                    <% if todoentry[:completed] == false %>
+                      <% not_done += 1 %>
+                    <% end %>
+                  <% end %>
+                  <p><span class="score">Items to complete: <%= not_done %></span></p>
+                <% end %>
+
+            </li>
+
+
           </ul>
+
+
+
+
+
         </nav>
         <hr>
       </header>
@@ -37,19 +62,7 @@
         <%= yield %>
       </section>
 
-      <div>
-        <% not_done = 0 %>
-        <% if TODOS.todos.empty? %>
-          <p></p>
-        <% else %>
-          <% TODOS.todos.each do |todoentry| %>
-            <% if todoentry[:completed] == false %>
-              <% not_done += 1 %>
-            <% end %>
-          <% end %>
-          <p><span class="score">Items to complete: <%= not_done %></span></p>
-        <% end %>
-      </div>
+
 
 
     </div>
