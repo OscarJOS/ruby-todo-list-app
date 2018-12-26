@@ -35,4 +35,20 @@ class ToDoList
       todo[:completed] == true
     end
   end
+
+  def filter_todos(filter)
+    view = nil
+    if filter == "true"
+      view = true
+    else
+      view = false
+    end
+    @todos.select do |todo|
+      todo[:completed] == view
+    end
+  end
+
+
+
+
 end
