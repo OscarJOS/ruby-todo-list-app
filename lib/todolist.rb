@@ -53,4 +53,13 @@ class ToDoList
     end
   end
 
+  def count_incomplete_todos
+    incomplete = 0
+    @todos.each do |todo|
+      if todo[:completed] == false
+        incomplete +=1
+      end
+    end
+    incomplete
+  end
 end

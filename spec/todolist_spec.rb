@@ -119,4 +119,10 @@ RSpec.describe ToDoList do
       }])
   end
 
+  it "returns the total number of incomplete todos" do
+    todo_list.complete_todo(0)
+    todo_list.complete_todo(2)
+    expect(todo_list.count_incomplete_todos).to eq(2)
+  end
+
 end
