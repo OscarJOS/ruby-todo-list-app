@@ -22,16 +22,8 @@ class App < Sinatra::Base
     puts logger.info params
     @todos = TODOS.todos
     @id = params[:id]
-    @status = TODOS.filter_todos("all")
-
-    if params["status"] == "all"
-      @status = TODOS.filter_todos("all")
-    elsif params["status"] == "complete"
-      @status = TODOS.filter_todos("complete")
-    elsif params["status"] == "incomplete"
-      @status = TODOS.filter_todos("incomplete")
-    end
-
+    @status = TODOS.filter_todos(params["status"])
+    
     erb :index
   end
 

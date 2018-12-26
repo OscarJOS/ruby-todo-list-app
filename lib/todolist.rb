@@ -53,7 +53,4 @@ class ToDoList
     end
   end
 
-
-
-
 end
