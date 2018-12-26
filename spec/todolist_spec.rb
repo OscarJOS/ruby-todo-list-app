@@ -41,9 +41,15 @@ RSpec.describe ToDoList do
     expect(todo_list.todos).not_to include("Pick up kids")
   end
 
-  it "marks a todo as complete" do
+  it "marks a todo as complete - @completed = true" do
     todo_list.complete_todo(0)
     expect(todo_list.todos[0][:completed]).to eq(true)
+  end
+
+  it "marks a todo as not complete - @completed = false" do
+    todo_list.complete_todo(1)
+    todo_list.incomplete_todo(1)
+    expect(todo_list.todos[0][:completed]).to eq(false)
   end
 
 
