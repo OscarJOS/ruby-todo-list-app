@@ -1,4 +1,4 @@
-require 'sinatra'
+# require 'sinatra'
 
 class NewToDo
   attr_accessor :todo, :completed
