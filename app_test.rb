@@ -72,5 +72,4 @@ class ToDoTest < Test::Unit::TestCase
     puts last_response.body
     assert last_response.body.include?("Items to complete: 1")
   end
-
 end
