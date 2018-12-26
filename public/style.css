@@ -1,9 +1,9 @@
-html{
+html {
   display: flex;
   flex-direction: column;
 }
 
-body{
+body {
   width: 55vw;
   font-family: 'Roboto', sans-serif;
   align-self: center;
@@ -25,19 +25,19 @@ h2 {
   color: #70C1B3;
 }
 
-a{
+a {
   font-weight: 700;
   text-decoration: none;
   color: #70C1B3;
 }
 
-nav{
+nav {
   display: flex;
   flex-direction: column;
   padding: 0 5vw;
 }
 
-nav a{
+nav a {
   text-decoration: none;
   color: #FFFFFF;
 }
@@ -46,12 +46,12 @@ nav a:hover {
   color: #B2DBBF;
 }
 
-ul{
+ul {
   padding: 0;
   margin: 0;
 }
 
-nav li{
+nav li {
   display: inline-block;
   font-size: 0.9rem;
   font-weight: 700;
@@ -63,23 +63,23 @@ nav li{
   list-style: none;
 }
 
-hr{
+hr {
   width: 40vw;
 }
 
-section{
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-fieldset{
+fieldset {
   margin: 0;
   border: 0;
 }
 
-input[type=text]{
+input[type=text] {
   padding: 0.3rem 0.8rem;
   width: 78%;
   font-family: inherit;
@@ -89,7 +89,7 @@ input[type=text]{
   border-radius: 0.5rem;
 }
 
-input[type=number]:focus, input[type=text]:focus{
+input[type=number]:focus, input[type=text]:focus {
   outline: none;
   box-shadow: 0 0 0.5rem #B2DBBF;
 }
@@ -99,7 +99,7 @@ input::placeholder {
   font-style: italic;
 }
 
-input[type=submit]{
+input[type=submit] {
   margin: 0.2rem;
   padding: 0.3rem 0.8rem;
   font-family: inherit;
@@ -109,54 +109,53 @@ input[type=submit]{
   border-radius: 0.3rem;
   background-color: #70C1B3;
   color: #FFF;
-  -webkit-box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
-  -moz-box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
-  box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
+  -webkit-box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 1);
+  box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 1);
 }
 
-
-[type=submit].amend-todo{
+[type=submit].amend-todo {
   background-color: #FFF;
   color: #000;
   padding: 0 0.3rem;
   border-radius: 0.2rem;
   font-size: 0.7rem;
-  -webkit-box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
-  -moz-box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
-  box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
+  -webkit-box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 1);
+  box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 1);
 }
 
-[type=submit].filter-todos{
+[type=submit].filter-todos {
   background-color: #FFF;
   color: #000;
   padding: 0 0.3rem;
   border-radius: 0.2rem;
   font-size: 0.8rem;
-  -webkit-box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
-  -moz-box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
-  box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
+  -webkit-box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 1);
+  box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 1);
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #FFFFFF;
   border-radius: 2rem;
   border: 1px solid #E0E0E0;
-  -webkit-box-shadow: 10px 10px 18px -1px rgba(0,0,0,1);
-  -moz-box-shadow: 10px 10px 18px -1px rgba(0,0,0,1);
-  box-shadow: 10px 10px 18px -1px rgba(0,0,0,1);
+  -webkit-box-shadow: 10px 10px 18px -1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 10px 10px 18px -1px rgba(0, 0, 0, 1);
+  box-shadow: 10px 10px 18px -1px rgba(0, 0, 0, 1);
 }
 
-.content{
+.content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 43vw;
 }
 
-.todo{
+.todo {
   margin: 0.2rem 0;
   padding: 0.3rem;
   font-size: 1.2rem;
@@ -164,7 +163,7 @@ input[type=submit]{
   border-radius: 0.5rem;
 }
 
-.completed{
+.completed {
   font-style: italic;
   text-decoration: line-through;
   background-color: #E7F7F4;
@@ -172,21 +171,29 @@ input[type=submit]{
   border: 1px solid #E0E0E0;
 }
 
-.incomplete{
+.incomplete {
   background-color: #E3F4E9;
   border: 1px solid #E0E0E0;
 }
 
-.score{
+.score {
+  padding: 0 0.3rem;
+  border: 1px solid #E0E0E0;
+  border-radius: 0.2rem;
   font-size: 0.8rem;
+  -webkit-box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 1);
+  box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 1);
+}
+  /* font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 700;
   padding: 0 0.5rem;
   border-radius: 0.3rem;
   border: 1px solid #000000;
-}
+} */
 
-.todo-options{
+.todo-options {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

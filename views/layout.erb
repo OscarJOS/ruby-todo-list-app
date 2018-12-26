@@ -8,17 +8,20 @@
   <body>
     <div class="container">
       <header>
-        <a href="/"><h1>To Do List</h1></a>
+        <a href="/">
+          <h1>To Do List</h1>
+        </a>
         <hr>
         <nav>
 
           <ul>
 
             <form method="get" action="/">
-              <li>View: </li>
-              <li><input class="filter-todos" type="submit" value="all" name="status" value="all"></li>
-              <li><input class="filter-todos" type="submit" value="incomplete" name="status" value="false"></li>
-              <li><input class="filter-todos" type="submit" value="complete" name="status" value="true"></li>
+              <li>View:
+              </li>
+              <li><input class="filter-todos" type="submit" value="all" name="status"></li>
+              <li><input class="filter-todos" type="submit" value="false" name="status"></li>
+              <li><input class="filter-todos" type="submit" value="true" name="status"></li>
             </form>
           </ul>
         </nav>
@@ -32,39 +35,32 @@
             </li>
 
             <li>
-                <% not_done = 0 %>
+              <% not_done = 0 %>
                 <% if TODOS.todos.empty? %>
                   <p></p>
                 <% else %>
                   <% TODOS.todos.each do |todoentry| %>
                     <% if todoentry[:completed] == false %>
-                      <% not_done += 1 %>
+                      <% not_done += 1 %><% end %>
                     <% end %>
+                    <p class="score">
+                      <span>📃 Items to complete:
+                        <%= not_done %></span></p>
                   <% end %>
-                  <p><span class="score">Items to complete: <%= not_done %></span></p>
-                <% end %>
 
-            </li>
+                </li>
 
+              </ul>
 
-          </ul>
+            </nav>
+            <hr>
+          </header>
 
+          <section>
+            <%= yield %>
+          </section>
+          <br>
 
-
-
-
-        </nav>
-        <hr>
-      </header>
-
-
-      <section>
-        <%= yield %>
-      </section>
-
-
-
-
-    </div>
-  </body>
-</html>
+        </div>
+      </body>
+    </html>

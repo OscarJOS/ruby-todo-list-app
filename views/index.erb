@@ -3,7 +3,7 @@
     <p>Your to-do list is empty.</p>
     <fieldset>
       <form method="post" action="/todos/">
-        <input type="text" name="todo" id="todo" placeholder="e.g. call brother" autofocus required>
+        <input type="text" name="todo" id="todo" placeholder="e.g. call brother" autofocus="autofocus" required="required">
         <input type="submit" value="Add new item">
       </form>
     </fieldset>
@@ -11,11 +11,10 @@
   <% else %>
     <fieldset>
       <form method="post" action="/todos/">
-        <input type="text" name="todo" id="todo" placeholder="e.g. call brother" autofocus required>
+        <input type="text" name="todo" id="todo" placeholder="e.g. call brother" autofocus="autofocus" required="required">
         <input type="submit" value="Add">
       </form>
     </fieldset>
-
 
     <% @status.each_with_index do |todoentry, index| %>
       <div class="todo">
@@ -31,17 +30,17 @@
           </form>
 
           <form method="post" action="/todos/<%= index %>/complete">
-            <input type="hidden" name="_method" value="put" />
+            <input type="hidden" name="_method" value="put"/>
             <input class="amend-todo" type="submit" value="✅ Done">
           </form>
 
           <form method="post" action="/todos/<%= index %>/incomplete">
-            <input type="hidden" name="_method" value="put" />
+            <input type="hidden" name="_method" value="put"/>
             <input class="amend-todo" type="submit" value="❌ Not done">
           </form>
 
           <form method="post" action="/todos/<%= index %>">
-            <input type="hidden" name="_method" value="delete" />
+            <input type="hidden" name="_method" value="delete"/>
             <input class="amend-todo" type="submit" value="🗑️ Delete">
           </form>
 
