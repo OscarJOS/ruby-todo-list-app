@@ -78,14 +78,9 @@ section{
   justify-content: center;
 }
 
-fieldset{
-  border: 0;
-  padding: 0;
-}
-
 input[type=text]{
   padding: 0.3rem 0.8rem;
-  width: 77%;
+  width: 78%;
   font-family: inherit;
   font-size: inherit;
   font-weight: bold;
