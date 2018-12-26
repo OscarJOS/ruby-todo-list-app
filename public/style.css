@@ -1,7 +1,3 @@
-/* *{
-  border: 1px solid red;
-} */
-
 html{
   display: flex;
   flex-direction: column;
@@ -111,8 +107,11 @@ input[type=submit]{
   font-weight: bold;
   text-transform: uppercase;
   border-radius: 0.3rem;
-  background-color: #247BA0;
-  color: #FFFFFF;
+  background-color: #70C1B3;
+  color: #FFF;
+  -webkit-box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
+  -moz-box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
+  box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
 }
 
 
@@ -170,12 +169,12 @@ input[type=submit]{
   text-decoration: line-through;
   background-color: #E7F7F4;
   color: #3D3D3D;
-  border: 1px solid #E0E0E0
+  border: 1px solid #E0E0E0;
 }
 
 .incomplete{
   background-color: #E3F4E9;
-  border: 1px solid #E0E0E0
+  border: 1px solid #E0E0E0;
 }
 
 .score{

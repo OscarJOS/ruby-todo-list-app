@@ -26,32 +26,25 @@
         <% end %>
 
         <div class="todo-options">
-          <div>
           <form method="get" action="/todos/<%= index %>/edit">
             <input class="amend-todo" type="submit" value="📝 Edit">
           </form>
-          </div>
 
-          <div>
-          <form method="post" action="/todos/<%= index %>">
-            <input type="hidden" name="_method" value="delete" />
-            <input class="amend-todo" type="submit" value="🗑️ Delete">
-          </form>
-          </div>
-
-          <div>
           <form method="post" action="/todos/<%= index %>/complete">
             <input type="hidden" name="_method" value="put" />
             <input class="amend-todo" type="submit" value="✅ Done">
           </form>
-          </div>
 
-          <div>
           <form method="post" action="/todos/<%= index %>/incomplete">
             <input type="hidden" name="_method" value="put" />
             <input class="amend-todo" type="submit" value="❌ Not done">
           </form>
-          </div>
+
+          <form method="post" action="/todos/<%= index %>">
+            <input type="hidden" name="_method" value="delete" />
+            <input class="amend-todo" type="submit" value="🗑️ Delete">
+          </form>
+
         </div>
       </div>
     <% end %>
