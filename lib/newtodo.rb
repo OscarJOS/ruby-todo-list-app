@@ -1,5 +1,3 @@
-# require 'sinatra'
-
 class NewToDo
   attr_accessor :todo, :completed, :id
 

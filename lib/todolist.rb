@@ -1,5 +1,3 @@
-require 'sinatra'
-
 class ToDoList
   attr_accessor :todos
 
