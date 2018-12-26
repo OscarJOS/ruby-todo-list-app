@@ -30,9 +30,9 @@ class ToDoList
     @todos[index.to_i][:completed] = false
   end
 
-  def clear_completed_todos
-    @todos.delete_if do |item|
-      item[:completed] == true
+  def delete_done_todos
+    @todos.delete_if do |todo|
+      todo[:completed] == true
     end
   end
 end

@@ -74,8 +74,8 @@ class App < Sinatra::Base
     erb :clear_completed_todos
   end
 
-  delete "/todos/delete_all" do
-    TODOS.clear_completed_todos
+  post "/todos/delete_done" do
+    TODOS.delete_done_todos
     redirect "/"
   end
 end
