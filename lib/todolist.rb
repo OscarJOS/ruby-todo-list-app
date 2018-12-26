@@ -37,16 +37,16 @@ class ToDoList
   end
 
   def filter_todos(filter)
-    view = nil
-    if filter == "true"
-      view = true
-    elsif filter == "false"
-      view = false
+    value = nil
+    if filter == "complete"
+      value = true
+    elsif filter == "incomplete"
+      value = false
     end
 
-    if view == true || view == false
+    if value == true || value == false
       @todos.select do |todo|
-        todo[:completed] == view
+        todo[:completed] == value
       end
     else
       @todos

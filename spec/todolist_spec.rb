@@ -64,7 +64,7 @@ RSpec.describe ToDoList do
   it "returns the completed todos only" do
     todo_list.complete_todo(0)
     todo_list.complete_todo(2)
-    expect(todo_list.filter_todos("true")).to eq([
+    expect(todo_list.filter_todos("complete")).to eq([
       {
         todo: "Buy milk",
         completed: true,
@@ -80,7 +80,7 @@ RSpec.describe ToDoList do
   it "returns the incomplete todos only" do
     todo_list.complete_todo(0)
     todo_list.complete_todo(2)
-    expect(todo_list.filter_todos("false")).to eq([
+    expect(todo_list.filter_todos("incomplete")).to eq([
       {
         todo: "Pick up kids",
         completed: false,

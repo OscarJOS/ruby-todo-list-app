@@ -53,4 +53,14 @@ class ToDoTest < Test::Unit::TestCase
     assert !last_response.body.include?('Go shopping')
   end
 
+  def test_it_displays_completed_todos_only
+    post "/todos/", :todo => "Go shopping"
+    post "/todos/", :todo => "Pick up kids"
+    put "/todos/0/complete"
+    put "/todos/1/complete"
+    get "/", :status => "complete"
+    puts last_response.body
+    assert !last_response.body.include?("Pick up kids")
+  end
+
 end

@@ -13,14 +13,15 @@
           <hr>
           <ul>
             <li>View: </li>
-            <li><a href="/">All</a></li>
-            <li>
-              <form method="get" action="/todos/">
-                <input type="submit" value="View completed">
-              </form>
-            </li>
-            <!-- <li><a href="/view_completed_todos">Done</a></li> -->
-            <li><a href="/view_incomplete_todos">Not done</a></li>
+            <form method="get" action="/">
+              <li><input type="submit" value="all" name="status" value="all"></li>
+              <li><input type="submit" value="incomplete" name="status" value="false"></li>
+              <li><input type="submit" value="complete" name="status" value="true"></li>
+            </form>
+
+            <!-- <li><a href="/">All</a></li>
+            <li><a href="/view_completed_todos">Done</a></li>
+            <li><a href="/view_incomplete_todos">Not done</a></li> -->
           </ul>
         </nav>
         <nav>

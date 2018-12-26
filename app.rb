@@ -4,8 +4,7 @@ require_relative "./lib/newtodo"
 require_relative "./lib/todolist"
 require 'sinatra/custom_logger'
 require 'logger'
-require 'uri'
-
+# require 'uri'
 
 
 class App < Sinatra::Base
@@ -20,8 +19,19 @@ class App < Sinatra::Base
   TODOS = ToDoList.new
 
   get "/" do
+    puts logger.info params
     @todos = TODOS.todos
     @id = params[:id]
+    @status = TODOS.filter_todos("all")
+
+    if params["status"] == "all"
+      @status = TODOS.filter_todos("all")
+    elsif params["status"] == "complete"
+      @status = TODOS.filter_todos("complete")
+    elsif params["status"] == "incomplete"
+      @status = TODOS.filter_todos("incomplete")
+    end
+
     erb :index, :layout => :layout
   end
 

@@ -19,7 +19,9 @@
       <input type="submit" value="Add">
     </form>
 
-    <% @todos.each_with_index do |todoentry, index| %>
+    <!-- <p><%= @status %></p> -->
+
+    <% @status.each_with_index do |todoentry, index| %>
       <div class="todo">
         <% if todoentry[:completed] == true %>
           <p class="todo completed"><%= todoentry[:todo] %></p>
@@ -50,5 +52,7 @@
         </div>
       </div>
     <% end %>
+
+
   <% end %>
 </div>
