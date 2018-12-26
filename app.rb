@@ -4,9 +4,6 @@ require_relative "./lib/newtodo"
 require_relative "./lib/todolist"
 require 'sinatra/custom_logger'
 require 'logger'
-require 'uri'
-
-
 
 class App < Sinatra::Base
   use Rack::MethodOverride
@@ -20,9 +17,12 @@ class App < Sinatra::Base
   TODOS = ToDoList.new
 
   get "/" do
+    puts logger.info params
     @todos = TODOS.todos
     @id = params[:id]
-    erb :index, :layout => :layout
+    @status = TODOS.filter_todos(params[:status])
+
+    erb :index
   end
 
   post "/todos/" do
@@ -58,25 +58,6 @@ class App < Sinatra::Base
   put "/todos/:id/incomplete" do
     TODOS.incomplete_todo(params[:id])
     redirect "/"
-  end
-
-  get "/todos" do
-    logger.info params
-    status = params[:view]
-  end
-
-  get "/view_completed_todos" do
-    @todos = TODOS.todos
-    erb :view_completed_todos
-  end
-
-  get "/view_incomplete_todos" do
-    @todos = TODOS.todos
-    erb :view_incomplete_todos
-  end
-
-  get "/clear_completed_todos" do
-    erb :clear_completed_todos
   end
 
   post "/todos/delete_done" do

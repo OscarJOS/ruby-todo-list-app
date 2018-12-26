@@ -33,7 +33,6 @@ class ToDoTest < Test::Unit::TestCase
   def test_it_marks_item_as_completed
     put "/todos/0/complete"
     get "/"
-    puts last_response.body
     assert last_response.body.include?('<p class="todo completed">Get milk')
   end
 
@@ -43,13 +42,29 @@ class ToDoTest < Test::Unit::TestCase
     assert last_response.body.include?('<p class="todo incomplete">Get milk')
   end
 
-  # def test_it_clears_completed_todos
-  #   post "/add_todo", :todo => "Go shopping"
-  #   post "/complete_todo", :index => "1"
-  #   post "/complete_todo", :index => "2"
-  #   post "/clear_completed_todos"
-  #   get "/"
-  #   assert last_response.body.include?('Your to-do list is empty')
-  # end
+  def test_deletes_completed_items_from_list
+    post "/todos/", :todo => "Go shopping"
+    post "/todos/", :todo => "Pick up kids"
+    put "/todos/0/complete"
+    put "/todos/1/complete"
+    post "/todos/delete_done"
+    get "/"
+    puts last_response.body
+    assert !last_response.body.include?('Go shopping')
+  end
+
+  def test_it_displays_completed_todos_only
+    post "/todos/", :todo => "Go shopping"
+    post "/todos/", :todo => "Pick up kids"
+    put "/todos/0/complete"
+    put "/todos/1/complete"
+    get "/", :status => "complete"
+    assert !last_response.body.include?("Pick up kids")
+  end
+
+  def test_it_displays_incomplete_todos_only
+    get "/", :status => "incomplete"
+    assert !last_response.body.include?("Go shopping")
+  end
 
 end

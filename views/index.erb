@@ -19,7 +19,7 @@
       <input type="submit" value="Add">
     </form>
 
-    <% @todos.each_with_index do |todoentry, index| %>
+    <% @status.each_with_index do |todoentry, index| %>
       <div class="todo">
         <% if todoentry[:completed] == true %>
           <p class="todo completed"><%= todoentry[:todo] %></p>
@@ -31,7 +31,6 @@
           <form method="get" action="/todos/<%= index %>/edit">
             <input class="amend-todo" type="submit" value="📝 Edit">
           </form>
-
 
           <form method="post" action="/todos/<%= index %>">
             <input type="hidden" name="_method" value="delete" />
@@ -50,5 +49,6 @@
         </div>
       </div>
     <% end %>
+
   <% end %>
 </div>

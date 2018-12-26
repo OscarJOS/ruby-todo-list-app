@@ -35,4 +35,22 @@ class ToDoList
       todo[:completed] == true
     end
   end
+
+  def filter_todos(filter)
+    value = nil
+    if filter == "complete"
+      value = true
+    elsif filter == "incomplete"
+      value = false
+    end
+
+    if value == true || value == false
+      @todos.select do |todo|
+        todo[:completed] == value
+      end
+    else
+      @todos
+    end
+  end
+
 end
