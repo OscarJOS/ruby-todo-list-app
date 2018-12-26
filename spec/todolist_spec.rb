@@ -52,6 +52,13 @@ RSpec.describe ToDoList do
     expect(todo_list.todos[0][:completed]).to eq(false)
   end
 
+  it "deletes completed todos - where @completed = true" do
+    todo_list.complete_todo(0)
+    todo_list.complete_todo(1)
+    todo_list.delete_done_todos
+    expect(todo_list.todos.empty?).to eq(true)
+  end
+
 
 
 end
