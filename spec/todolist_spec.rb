@@ -36,6 +36,11 @@ RSpec.describe ToDoList do
     expect(todo_list.todos[0][:todo]).to eq("Food shopping")
   end
 
+  it "deletes an existing todo" do
+    todo_list.delete_todo(1)
+    expect(todo_list.todos).not_to include("Pick up kids")
+  end
+
 
 
 end
