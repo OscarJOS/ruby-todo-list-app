@@ -64,7 +64,6 @@ class ToDoTest < Test::Unit::TestCase
 
   def test_it_displays_incomplete_todos_only
     get "/", :status => "incomplete"
-    puts last_response.body
     assert !last_response.body.include?("Go shopping")
   end
 
