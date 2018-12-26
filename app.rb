@@ -17,7 +17,6 @@ class App < Sinatra::Base
   TODOS = ToDoList.new
 
   get "/" do
-    puts logger.info params
     @todos = TODOS.todos
     @id = params[:id]
     @status = TODOS.filter_todos(params[:status])
@@ -40,13 +39,11 @@ class App < Sinatra::Base
   end
 
   put "/todos/:id/edit" do
-    logger.info params
     TODOS.edit_todo(params[:id], params[:todo],)
     redirect "/"
   end
 
   delete "/todos/:id" do
-    logger.info params
     TODOS.delete_todo(params[:id])
     redirect "/"
   end
