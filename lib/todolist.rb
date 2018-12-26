@@ -1,4 +1,4 @@
-require 'newtodo'
+require './lib/newtodo'
 
 class ToDoList
   attr_accessor :todos
