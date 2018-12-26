@@ -22,8 +22,8 @@ class App < Sinatra::Base
     puts logger.info params
     @todos = TODOS.todos
     @id = params[:id]
-    @status = TODOS.filter_todos(params["status"])
-    
+    @status = TODOS.filter_todos(params[:status])
+
     erb :index
   end
 
