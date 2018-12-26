@@ -78,19 +78,6 @@ fieldset{
   padding: 0.2rem;
 }
 
-input[type=submit]{
-  margin: 0.7rem;
-  padding: 5px 0.8rem 5px 0.8rem;
-  width: 20vw;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 0.5rem;
-  background-color: #247BA0;
-  color: #FFFFFF;
-}
-
 input[type=number], input[type=text]{
   margin: 0.3rem;
   padding: 5px 0.8rem 5px 0.8rem;
@@ -110,6 +97,29 @@ input[type=number]:focus, input[type=text]:focus{
 input::placeholder {
   color: #A0A0A0;
   font-style: italic;
+}
+
+input[type=submit]{
+  margin: 0.2rem;
+  padding: 0.3rem 0.8rem;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 0.3rem;
+  background-color: #247BA0;
+  color: #FFFFFF;
+}
+
+[type=submit].amend-todo{
+  background-color: #FFF;
+  color: #000;
+  padding: 0 0.3rem;
+  border-radius: 0.2rem;
+  font-size: 0.7rem;
+  -webkit-box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
+  -moz-box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
+  box-shadow: 2px 2px 2px -1px rgba(0,0,0,1);
 }
 
 .container{
@@ -157,4 +167,10 @@ input::placeholder {
   padding: 0 0.5rem;
   border-radius: 0.3rem;
   border: 1px solid #000000;
+}
+
+.todo-options{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

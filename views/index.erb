@@ -26,21 +26,29 @@
         <% else %>
           <p class="todo incomplete"><%= todoentry[:todo] %></p>
         <% end %>
-        <a href="/todos/<%= index %>/edit">Edit me</a>
+
+        <div class="todo-options">
+          <form method="get" action="/todos/<%= index %>/edit">
+            <!-- <input type="hidden" name="_method" value="delete" /> -->
+            <input class="amend-todo" type="submit" value="📝 Edit">
+          </form>
 
 
-        <form method="post" action="/todos/<%= index %>">
-          <input type="hidden" name="_method" value="delete" />
-          <input type="submit" value="Delete">
-        </form>
-        <form method="post" action="/todos/<%= index %>/complete">
-          <input type="hidden" name="_method" value="put" />
-          <input type="submit" value="Done">
-        </form>
-        <form method="post" action="/todos/<%= index %>/incomplete">
-          <input type="hidden" name="_method" value="put" />
-          <input type="submit" value="Not done">
-        </form>
+          <form method="post" action="/todos/<%= index %>">
+            <input type="hidden" name="_method" value="delete" />
+            <input class="amend-todo" type="submit" value="🗑️ Delete">
+          </form>
+
+          <form method="post" action="/todos/<%= index %>/complete">
+            <input type="hidden" name="_method" value="put" />
+            <input class="amend-todo" type="submit" value="✅ Done">
+          </form>
+
+          <form method="post" action="/todos/<%= index %>/incomplete">
+            <input type="hidden" name="_method" value="put" />
+            <input class="amend-todo" type="submit" value="❌ Not done">
+          </form>
+        </div>
       </div>
     <% end %>
   <% end %>
