@@ -28,6 +28,9 @@
         <hr>
         <nav>
           <ul>
+            <% if TODOS.todos.empty? %>
+              <li></li>
+            <% else %>
             <li>
               <form method="post" action="/todos/delete_done">
                 <input class="filter-todos" type="submit" value="🗑️ Clear done items">
@@ -50,11 +53,12 @@
                   <% end %>
 
                 </li>
-
+                <hr>
+                <% end %>
               </ul>
 
             </nav>
-            <hr>
+
           </header>
 
           <section>
