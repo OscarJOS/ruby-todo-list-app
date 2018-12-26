@@ -2,12 +2,9 @@
   <% if @todos.empty? %>
     <p>Your to-do list is empty.</p>
     <form method="post" action="/todos/">
-      <fieldset>
-        <label for="todo">Add item:</label>
         <br>
         <input type="text" name="todo" id="todo" placeholder="e.g. call brother" autofocus required>
-      </fieldset>
-      <input type="submit" value="Add">
+      <input type="submit" value="Add new item">
     </form>
   <% else %>
     <form method="post" action="/todos/">
