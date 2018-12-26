@@ -60,11 +60,6 @@ class App < Sinatra::Base
     redirect "/"
   end
 
-  get "/todos" do
-    logger.info params
-    status = params[:view]
-  end
-
   get "/view_completed_todos" do
     @todos = TODOS.todos
     erb :view_completed_todos

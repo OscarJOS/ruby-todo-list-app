@@ -37,7 +37,7 @@ class ToDoList
   end
 
   def filter_todos(filter)
-    view = "all"
+    view = nil
     if filter == "true"
       view = true
     elsif filter == "false"
