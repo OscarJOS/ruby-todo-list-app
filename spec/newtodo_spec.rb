@@ -11,20 +11,20 @@ RSpec.describe NewToDo do
     expect(new_todo.is_a?Object).to eq(true)
   end
 
-  it "creates a new instance of the NewToDo class with 'Wash clothes' as the value of @todo'" do
+  it "creates a new instance of the NewToDo class with 'Wash clothes' as the value of @todo" do
     expect(new_todo.todo).to eq("Wash clothes")
   end
 
   it "creates a new instance of the NewToDo class with false as the value of @completed" do
     expect(new_todo.completed).to eq(false)
   end
+end
 
+RSpec.describe NewToDo do
 
-  #
-  # it "creates a new instance of the NewToDo class" do
-  #   new_todo = NewToDo.new("Wash clothes")
-  #   expect(new_todo.todo).to eq("Wash clothes")
-  # end
-
+  it "creates a new instance of the NewToDo class with 1 as the value of @id" do
+    new_todo = NewToDo.new("Wash clothes", 1)
+    expect(new_todo.id).to eq(1)
+  end
 
 end
