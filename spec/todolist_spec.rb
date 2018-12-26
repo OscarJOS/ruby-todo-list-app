@@ -93,6 +93,32 @@ RSpec.describe ToDoList do
       }])
   end
 
+  it "returns all of the todos, completed and not completed" do
+    todo_list.complete_todo(0)
+    todo_list.complete_todo(2)
+    expect(todo_list.filter_todos("all")).to eq([
+      {
+        todo: "Buy milk",
+        completed: true,
+        id: 0,
+      },
+      {
+        todo: "Pick up kids",
+        completed: false,
+        id: 1,
+      },
+      {
+        todo: "Wash car",
+        completed: true,
+        id: 2,
+      },
+      {
+        todo: "Call sister",
+        completed: false,
+        id: 3,
+      }])
+  end
+
 
 
 end

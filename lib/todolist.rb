@@ -37,14 +37,19 @@ class ToDoList
   end
 
   def filter_todos(filter)
-    view = nil
+    view = "all"
     if filter == "true"
       view = true
-    else
+    elsif filter == "false"
       view = false
     end
-    @todos.select do |todo|
-      todo[:completed] == view
+
+    if view == true || view == false
+      @todos.select do |todo|
+        todo[:completed] == view
+      end
+    else
+      @todos
     end
   end
 
