@@ -80,13 +80,12 @@ section{
 
 fieldset{
   border: 0;
-  padding: 0.2rem;
+  padding: 0;
 }
 
-input[type=number], input[type=text]{
-  margin: 0.3rem;
-  padding: 5px 0.8rem 5px 0.8rem;
-  width: 40vw;
+input[type=text]{
+  padding: 0.3rem 0.8rem;
+  width: 77%;
   font-family: inherit;
   font-size: inherit;
   font-weight: bold;
@@ -189,5 +188,6 @@ input[type=submit]{
 .todo-options{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
 }

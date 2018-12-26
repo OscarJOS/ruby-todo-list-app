@@ -11,11 +11,11 @@
     </form>
   <% else %>
     <form method="post" action="/todos/">
-      <fieldset>
-        <label for="todo">Add item:</label>
+<!--  -->
+        <!-- <label for="todo">Add item:</label> -->
         <br>
         <input type="text" name="todo" id="todo" placeholder="e.g. call brother" autofocus required>
-      </fieldset>
+
       <input type="submit" value="Add">
     </form>
 
@@ -28,24 +28,32 @@
         <% end %>
 
         <div class="todo-options">
+          <div>
           <form method="get" action="/todos/<%= index %>/edit">
             <input class="amend-todo" type="submit" value="📝 Edit">
           </form>
+          </div>
 
+          <div>
           <form method="post" action="/todos/<%= index %>">
             <input type="hidden" name="_method" value="delete" />
             <input class="amend-todo" type="submit" value="🗑️ Delete">
           </form>
+          </div>
 
+          <div>
           <form method="post" action="/todos/<%= index %>/complete">
             <input type="hidden" name="_method" value="put" />
             <input class="amend-todo" type="submit" value="✅ Done">
           </form>
+          </div>
 
+          <div>
           <form method="post" action="/todos/<%= index %>/incomplete">
             <input type="hidden" name="_method" value="put" />
             <input class="amend-todo" type="submit" value="❌ Not done">
           </form>
+          </div>
         </div>
       </div>
     <% end %>
