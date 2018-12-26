@@ -1,7 +1,5 @@
-require 'sinatra'
-
 class NewToDo
-  attr_accessor :todo, :completed
+  attr_accessor :todo, :completed, :id
 
   def initialize(todo, id=nil)
     @todo = todo

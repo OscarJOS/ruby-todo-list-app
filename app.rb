@@ -1,7 +1,7 @@
 require "sinatra"
 require "sinatra/reloader"
-require_relative "newtodo"
-require_relative "todolist"
+require_relative "./lib/newtodo"
+require_relative "./lib/todolist"
 require 'sinatra/custom_logger'
 require 'logger'
 require 'uri'
@@ -58,6 +58,11 @@ class App < Sinatra::Base
   put "/todos/:id/incomplete" do
     TODOS.incomplete_todo(params[:id])
     redirect "/"
+  end
+
+  get "/todos" do
+    logger.info params
+    status = params[:view]
   end
 
   get "/view_completed_todos" do
