@@ -16,7 +16,7 @@
       </form>
     </fieldset>
 
-    <% @status.each_with_index do |todoentry, index| %>
+    <% @status.each_with_index do |todoentry, id| %>
       <div class="todo">
         <% if todoentry[:completed] == true %>
           <p class="todo completed"><%= todoentry[:todo] %></p>
@@ -25,23 +25,23 @@
         <% end %>
 
         <div class="todo-options">
-          <form method="get" action="/todos/<%= index %>/edit">
+          <form method="get" action="/todos/<%= id %>/edit">
             <input class="amend-todo" type="submit" value="📝 Edit">
           </form>
 
           <% if todoentry[:completed] == false %>
-            <form method="post" action="/todos/<%= index %>/complete">
+            <form method="post" action="/todos/<%= id %>/complete">
               <input type="hidden" name="_method" value="put"/>
               <input class="amend-todo" type="submit" value="✅ Done">
             </form>
           <% else %>
-            <form method="post" action="/todos/<%= index %>/incomplete">
+            <form method="post" action="/todos/<%= id %>/incomplete">
               <input type="hidden" name="_method" value="put"/>
               <input class="amend-todo" type="submit" value="❌ Not done">
             </form>
           <% end %>
 
-          <form method="post" action="/todos/<%= index %>">
+          <form method="post" action="/todos/<%= id %>">
             <input type="hidden" name="_method" value="delete"/>
             <input class="amend-todo" type="submit" value="🗑️ Delete">
           </form>

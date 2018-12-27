@@ -14,20 +14,20 @@ class ToDoList
     @todos << newtodo.new_todo
   end
 
-  def edit_todo(index, todo)
-    @todos[index.to_i][:todo] = todo
+  def edit_todo(id, todo)
+    @todos[id.to_i][:todo] = todo
   end
 
-  def delete_todo(index)
-    @todos.delete_at(index.to_i)
+  def delete_todo(id)
+    @todos.delete_at(id.to_i)
   end
 
-  def complete_todo(index)
-    @todos[index.to_i][:completed] = true
+  def complete_todo(id)
+    @todos[id.to_i][:completed] = true
   end
 
-  def incomplete_todo(index)
-    @todos[index.to_i][:completed] = false
+  def incomplete_todo(id)
+    @todos[id.to_i][:completed] = false
   end
 
   def delete_done_todos
