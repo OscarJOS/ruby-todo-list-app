@@ -20,3 +20,4 @@ Task: build a to-do list web app using Sinatra
 - [x] User can untoggle completed todo
 - [ ] Add "complete by date" to todo
 - [ ] User can filter and view "Overdue" todos
+- [ ] User should be able to have multiple todo lists
