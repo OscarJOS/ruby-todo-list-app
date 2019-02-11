@@ -38,9 +38,9 @@ class ToDoList
 
   def filter_todos(filter)
     value = nil
-    if filter == "complete"
+    if filter == 'complete'
       value = true
-    elsif filter == "incomplete"
+    elsif filter == 'incomplete'
       value = false
     end
 
@@ -56,9 +56,7 @@ class ToDoList
   def count_incomplete_todos
     incomplete = 0
     @todos.each do |todo|
-      if todo[:completed] == false
-        incomplete +=1
-      end
+      incomplete += 1 if todo[:completed] == false
     end
     incomplete
   end

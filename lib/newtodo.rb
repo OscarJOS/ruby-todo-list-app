@@ -1,7 +1,7 @@
 class NewToDo
   attr_accessor :todo, :completed, :id
 
-  def initialize(todo, id=nil)
+  def initialize(todo, id = nil)
     @todo = todo
     @completed = false
     @id = id
@@ -11,7 +11,7 @@ class NewToDo
     {
       todo: @todo,
       completed: @completed,
-      id: @id,
+      id: @id
     }
   end
 end
